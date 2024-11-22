@@ -1,0 +1,39 @@
+#: include KVFiles/Widgets/Widgets.kv
+########################################################################################################################
+<MAIN>:
+    name: "MAIN"
+    md_bg_color: "green"
+
+    #-------------------------------------------------------------------------------------------------------------------
+    MDFloatLayout:
+        id: logolay
+        radius: [0, 0, root.height/15, root.height/15]
+        md_bg_color: "red"
+        size_hint: (1, None)
+        height: root.height/5
+        pos_hint: {"center_x": 0.5}
+        y: root.height - self.height
+
+        MDFloatLayout:
+            size_hint: (None, None)
+            size: logolay.width * 0.7, logolay.height * 0.9
+            pos_hint: {"center_x": 0.5, "center_y": 0.45}
+
+            MDLabel:
+                text: "NOSSOAPP"
+                theme_text_color: "Custom"
+                text_color: "black"
+                font_size: root.width/9
+                pos_hint: {"center_x": 0.6, "center_y": 0.6}
+    
+    TestButton:
+        id: test_btn_1
+        text: "Clique aqui"
+        on_release:
+            root.print_something()
+    
+    TestButton2:
+        text: "Clique aqui"
+        x: test_btn_1.width + dp(10)
+        on_release:
+            self.print_something()
