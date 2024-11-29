@@ -8,7 +8,7 @@
     MDFloatLayout:
         id: logolay
         radius: [0, 0, root.height/15, root.height/15]
-        md_bg_color: "red"
+        md_bg_color: "white"
         size_hint: (1, None)
         height: root.height/5
         pos_hint: {"center_x": 0.5}
@@ -29,6 +29,7 @@
     TestButton:
         id: test_btn_1
         text: "Clique aqui"
+        line_width
         on_release:
             root.print_something()
     
@@ -37,3 +38,17 @@
         x: test_btn_1.width + dp(10)
         on_release:
             self.print_something()
+    
+    TestButton2:
+        text: "Clique aqui"
+        x: test_btn_1.width + dp(10)
+        on_release:
+            self.print_something()
+
+    TestButton2:
+        text: "Clique aqui"
+        x: test_btn_1.width + dp(10)
+        on_release:
+            self.print_something()
+
+    
