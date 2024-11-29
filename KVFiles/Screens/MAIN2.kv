@@ -1,16 +1,16 @@
 #: include KVFiles/Widgets/Widgets.kv
 ########################################################################################################################
-<MAIN>:
-    name: "MAIN"
+<MAIN2>:
+    name: "MAIN2"
     md_bg_color: "green"
 
     #-------------------------------------------------------------------------------------------------------------------
     MDFloatLayout:
         id: logolay
         radius: [0, 0, root.height/15, root.height/15]
-        md_bg_color: "white"
+        md_bg_color: "red"
         size_hint: (1, None)
-        height: root.height/5
+        height: root.height/4
         pos_hint: {"center_x": 0.5}
         y: root.height - self.height
 
@@ -20,7 +20,7 @@
             pos_hint: {"center_x": 0.5, "center_y": 0.45}
 
             MDLabel:
-                text: "tela 1"
+                text: "tela 2"
                 theme_text_color: "Custom"
                 text_color: "black"
                 font_size: root.width/9
@@ -31,5 +31,4 @@
         text: "Clique aqui"
         on_release:
             root.print_something()
-
     

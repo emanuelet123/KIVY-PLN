@@ -56,9 +56,48 @@ class MAIN(MDScreen):
             app.set_current_screen("LoginScreen")
     
     def print_something(self):
-        print("Cliquei 1")
+        app.set_current_screen("MAIN2")
+
+    def on_pre_enter(self):
+        print("1")
+    
+    def on_enter(self):
+        print("2")
+    
+    def on_pre_leave(self):
+        print("3")
+    
+    def on_leave(self):
+        print("4")
 
 
+class MAIN2(MDScreen):
+    def go_to(self):
+        """
+        Change screen if if has data
+        """
+        # Verify which screen should it go
+        if app.go_to == "App":
+            # Go to App
+            app.set_current_screen("ChoiceFIRST")
+        elif app.go_to == "Login":
+            # Go to Login
+            app.set_current_screen("LoginScreen")
+    
+    def print_something(self):
+        app.set_current_screen("MAIN")
+
+    def on_pre_enter(self):
+        print("1")
+    
+    def on_enter(self):
+        print("2")
+    
+    def on_pre_leave(self):
+        print("3")
+    
+    def on_leave(self):
+        print("4")
 ########################################################################################################################
 ################################################   OTHER WIDGETS   #####################################################
 ########################################################################################################################
@@ -80,7 +119,7 @@ class MyApp(MDApp):
     window_width = 0
     window_height = 0
     keyboard_height = 0
-    screens = {"MAIN": MAIN}
+    screens = {"MAIN": MAIN, "MAIN2": MAIN2}
 
     # -------------------------------------------------------------------------------------------------------WINDOW SIZE
     def get_window_size(self):
